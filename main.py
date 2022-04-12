@@ -1,10 +1,10 @@
 from cv2 import cv2
 import cvzone
-cap = cv2.VideoCapture(0)
+capture = cv2.VideoCapture(0)
 cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 overlay = cv2.imread('pirate.png', cv2.IMREAD_UNCHANGED)
 while True:
-    _, frame = cap.read()
+    _, frame = capture.read()
     gray_scale = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = cascade.detectMultiScale(gray_scale)
     for(x, y, w, h) in faces:
